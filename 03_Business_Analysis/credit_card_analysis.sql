@@ -21,6 +21,7 @@ SELECT
 FROM Accounts                               to verify
 GROUP BY CustomerID
 HAVING COUNT(AccountID) > 1;
+
 ## Total transaction amount?
 
 SELECT SUM(amount)
@@ -120,8 +121,7 @@ GROUP BY c.CustomerID,c.FirstName,c.LastName
 ORDER BY total_balance DESC
 LIMIT 10;
 ##Branchwisetop5transactions
-SELECT *
-FROM (
+WITH branch_transactions AS (
     SELECT
         BranchID,
         TransactionID,
@@ -131,7 +131,9 @@ FROM (
             ORDER BY Amount DESC
         ) AS rn
     FROM Transactions
-) x
+)
+SELECT *
+FROM branch_transactions
 WHERE rn <= 5;
 ##Who are the Top 10 Customers by Estimated Lifetime Value
 SELECT
