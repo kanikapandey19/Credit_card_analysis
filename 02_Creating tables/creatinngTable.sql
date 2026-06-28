@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS public.account_statuses
 (
     accountstatusid integer NOT NULL,
     statusname character varying(50) COLLATE pg_catalog."default",
-    CONSTRAINT account_statuses_pkey PRIMARY KEY (accountstatusid)
+    
 )
 
 
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS public.account_statuses
 (
     accounttypeid integer NOT NULL,
     typename character varying(50) COLLATE pg_catalog."default",
-    CONSTRAINT account_types_pkey PRIMARY KEY (accounttypeid)
+    
 )
 
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS public.accounts
     accounttypeid integer NOT NULL,
     accountstatusid integer NOT NULL,
     balance numeric(18,2) NOT NULL,
-    CONSTRAINT accounts_pkey PRIMARY KEY (accountid)
+    
 )
 
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS public.branches
     branchid integer NOT NULL,
     branchname character varying(100) COLLATE pg_catalog."default" NOT NULL,
     addressid integer NOT NULL,
-    CONSTRAINT branches_pkey PRIMARY KEY (branchid)
+    
 )
 
 
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS public.branches
     lastname character varying(50) COLLATE pg_catalog."default",
     addressid integer,
     customertypeid integer,
-    CONSTRAINT customers_pkey PRIMARY KEY (customerid)
+    
 )
 
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS public.customertypes
 (
     customertypeid integer NOT NULL,
     typename character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT customertypes_pkey PRIMARY KEY (customertypeid)
+    
 )
 
 
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS public.loans
     loanstatusid integer,
     principalamount numeric(12,2),
     interestrate numeric(6,4),
-    CONSTRAINT loans_pkey PRIMARY KEY (loanid)
+    
 )
 
 
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS public.loans
 (
     loanstatusid integer NOT NULL,
     statusname character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT loanstatus_pkey PRIMARY KEY (loanstatusid)
+    
 )
 
 
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS public.loans
     amount numeric(12,2) NOT NULL,
     branchid integer NOT NULL,
     description character varying(255) COLLATE pg_catalog."default",
-    CONSTRAINT transactions_pkey PRIMARY KEY (transactionid)
+    
 )
 
 
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS public.transactiontypes
 (
     transactiontypeid integer NOT NULL,
     typename character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT transactiontypes_pkey PRIMARY KEY (transactiontypeid)
+    
 )
 
 
